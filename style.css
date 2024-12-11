@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: hsl(0, 0%, 100%);
+    --text-color: hsl(240, 6%, 21%);
+    --card-bg-color: hsl(240, 9%, 89%);
+    --card-bg-selected-color: hsl(194, 97%, 31%);
+    --card-color-selected: hsl(240, 9%, 89%);
+
+    font-size: clamp(40%, 8vw, 62.5%);
+}
+
+.sr-only {
+    width: .1rem;
+    height: .1rem;
+    position: absolute;
+    overflow: hidden;
+    margin: -.1rem;
+    padding: 0rem;
+    border: 0rem;
+    appearance: none;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: grid;
+    height: 100vh;
+    place-content: center;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 192px;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#timer {
+    font-size: 13rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    justify-content: center;
+}
+
+#controls {
+    padding: 2.2rem 4rem;
+    gap: 4rem;
+    background-color: transparent;
+}
+
+#controls button {
+    background-color: transparent;
+    border: 0;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 4.4rem;
+}
+
+#cards {
+    margin-top: 1.6rem;
+    gap: 3.2rem;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+}
+
+#cards button {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    border: 0;
+    border-radius: 2.4rem;
+    cursor: pointer;
+    font-size: 5.4rem;
+    padding: 4.8rem;
+}
+
+#cards button.active {
+    background-color: var(--card-bg-selected-color);
+    color: var(--card-color-selected);
+}
+
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    #app {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    #app {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+}
