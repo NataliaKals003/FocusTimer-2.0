@@ -1,2 +1,2 @@
-import * as FocusTimer from "./focusTimer/index.js";
-FocusTimer.start(0, 0)
+import * as FocusTimer from "/src/FocusTimer/index.js";
+FocusTimer.start(0, 0);
